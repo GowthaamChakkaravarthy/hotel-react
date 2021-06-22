@@ -46,3 +46,41 @@ body {
   justify-content: center;
   align-items: center;
 }
+.sub-card {
+  position: relative;
+  width : 60% !important;
+  float : left;
+  background-color:  #FFF;
+  border-radius: 10px;
+}
+.imgCard,.detailCard {
+  float : left;
+  margin-right: 10px;
+}
+
+.card {
+  margin-bottom: 1rem;
+}
+
+.list-view {
+ .row {
+   > [class*='col-'] {
+     max-width: 100%;
+     flex: 0 0 100%;
+   }
+ }
+ .card {
+   @media (max-width: 575.98px) {
+    flex-direction: column;
+   }
+   flex-direction: row;
+   > .card-img-top {
+    width: auto;
+   }
+   
+   .card-body {
+     display: inline-block;
+   }
+ }
+}
+
