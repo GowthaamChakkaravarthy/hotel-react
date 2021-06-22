@@ -8,13 +8,15 @@ const FoodDetail = () => {
     const history = useHistory();
     const [foodObj , setFoodObj ] = useState(location.state.item);
     const [count , setCount] = useState(0)
+
     useEffect(() => {
         console.log(foodObj)
     }, [foodObj]);
 
     const increament = () => {
         setCount(count + 1)
-    } 
+        setFoodObj({...foodObj, count : count + 1})
+    }
     const decreament = () => {
         if (count > 0) setCount(count - 1)
     } 
@@ -27,13 +29,13 @@ const FoodDetail = () => {
                 <Card.Text>
                 {foodObj.description}
                 </Card.Text>
-                <div>
-                <button onClick = {() => {increament()}}>+1</button> &nbsp;
-                <span style = {{width :"20px"}}>{count}</span> &nbsp;
-                <button onClick = {() => {decreament()}}>-1</button> 
-                </div>
-<br></br>
-    <Button variant="primary">Buy - {foodObj.price}</Button>
+                    <div>
+                        <button onClick = {() => {increament()}}>+1</button> &nbsp;
+                        <span style = {{width :"20px"}}>{count}</span> &nbsp;
+                        <button onClick = {() => {decreament()}}>-1</button> 
+                    </div>
+                    <br></br>
+                <Button variant="primary" onClick = { () => {history.push({pathname : '/thankyou', state : { 'item' : foodObj }})}}>Buy - ${foodObj.price * foodObj.count}</Button>
             </Card.Body>
         </Card>
         </div>

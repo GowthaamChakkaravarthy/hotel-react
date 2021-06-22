@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import MainList from './components/MainList';
 import  SubList from './components/SubList';
 import FoodDetail from './components/FoodDetail';
+import ThankYou from './components/ThankYou';
 
 function App() {
   document.title = 'Ammazing Food Court';
@@ -20,6 +21,9 @@ function App() {
         </Route>
         <Route exact path="/fooddetail">
             <FoodDetail key ='sqwe'/>
+        </Route>
+        <Route exact path="/thankyou">
+            <ThankYou />
         </Route>
       </Switch>
     </Router>

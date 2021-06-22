@@ -11,27 +11,33 @@ const mainMenuList = [
 const MainList = (props) => {
 	let history = useHistory();
 	return (
-		<>
+		<div className='container'>
 		<div className ='header'> <h3> Amazing Food Court </h3> </div>
-		<div className='container center'>
-			{
-				mainMenuList.map((item) => {
-					return (
-					<Card key = {item.id} style={{ width: '20rem', float: 'left', marginRight : "20px"  }}>
-						<Card.Img variant="top" src={item.img} style = {{width : 'auto', height : '250px'}}/>
-						<Card.Body>
-							<Card.Title>{item.title}</Card.Title>
-							<Card.Text>
-								{item.description}
-							</Card.Text>
-							<Button variant="primary" onClick = {() => {history.push({pathname : '/sublist', state : { 'type' : item.type }, key : item.id})}}>Pick</Button>
-						</Card.Body>
-					</Card>
-					)
-				})
-			}
+			<div class="container">
+        		<div class="row">
+					
+					{
+						mainMenuList.map((item) => {
+							return (
+								<div key = {item.id} className="col-lg-6 mb-4 center" style={{margin : '10px !important'}}>
+									<Card style={{ width: '20rem'}}>
+										<Card.Img variant="top" src={item.img} style = {{width : 'auto', height : '250px'}}/>
+										<Card.Body>
+											<Card.Title>{item.title}</Card.Title>
+											<Card.Text>
+												{item.description}
+											</Card.Text>
+											<Button variant="primary" onClick = {() => {history.push({pathname : '/sublist', state : { 'type' : item.type }, key : item.id})}}>Pick</Button>
+										</Card.Body>
+									</Card>
+								</div>
+							)
+						})
+					}
+					
+				</div>
+			</div>
 		</div>
-		</>
 	);
 }
 
