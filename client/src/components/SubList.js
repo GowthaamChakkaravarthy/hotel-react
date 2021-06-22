@@ -26,7 +26,7 @@ const SubList = (props) => {
                             <div key = {item.id} className="col-12 col-md-6 col-lg-4">
                             <div className="card" style = {{width : '18rem', padding : '10px' }} 
                             onClick = {() => {history.push({pathname : '/fooddetail', state : { 'item' : item }, key : item.id})}}>
-                                <img className="card-img-top" src={item.img} alt="food" />
+                                <img className="card-img-top" src={item.img} style = {{width : 'auto', height : '250px'}} alt="food" />
                                 <span className = 'type' style = {{color:'#00FF00' }} > {item.type} </span>
                                 <div className="card-body" style = {{padding : '5px' }}>
                                 <div className="card-title"><h2>{item.title}</h2> <span> { item.price} </span></div>

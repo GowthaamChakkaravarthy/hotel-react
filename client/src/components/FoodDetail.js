@@ -21,7 +21,7 @@ const FoodDetail = () => {
     return (
         <div className = 'container center'>
         <Card style={{ width: '25rem' }}>
-            <Card.Img variant="top" src={foodObj.img} />
+            <Card.Img variant="top" src={foodObj.img} style = {{width : 'auto', height : '300px'}}/>
             <Card.Body>
                 <Card.Title>{foodObj.title}</Card.Title>
                 <Card.Text>
